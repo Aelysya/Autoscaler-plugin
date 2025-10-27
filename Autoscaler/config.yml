@@ -3,7 +3,7 @@
 name: Autoscaler
 authors:
   - Aelysya
-version: 0.0.0
+version: 0.0.16
 deps: []
 # psdk_compatibility_script: psdk.rb
 retry_psdk_compatibility_after_plugin_load: false

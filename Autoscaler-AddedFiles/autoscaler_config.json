@@ -1,10 +1,23 @@
 {
-  "levelScalingSwitch": 200,
-  "scaleDownSwitch": 201,
-  "EvolutionScalingSwitch": 202,
-  "MovesetScalingSwitch": 203,
+  "globalActivationSwitch": 200,
+  "allowScaleDownSwitch": 201,
+  "allowEvolutionScalingSwitch": 202,
+  "allowMovesetScalingSwitch": 203,
+  "allowAlliesScalingSwitch": 204,
   "maximumLevelsToScaleVariable": 200,
   "manualTargetLevelVariable": 201,
-  "scalingReference": "highest",
-  "scalingMode": "up"
+  "difficultySettings": [
+    {
+      "label": "Easy",
+      "scalingReference": "average"
+    },
+    {
+      "name": "Normal",
+      "scalingReference": "manual"
+    },
+    {
+      "name": "Hard",
+      "scalingReference": "highest"
+    }
+  ]
 }
