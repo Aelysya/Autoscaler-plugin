@@ -4,6 +4,7 @@ module Configs
   KEY_TRANSLATIONS[:allowEvolutionScalingSwitch] = :allow_evolution_scaling_switch
   KEY_TRANSLATIONS[:allowMovesetScalingSwitch] = :allow_moveset_scaling_switch
   KEY_TRANSLATIONS[:allowAlliesScalingSwitch] = :allow_allies_scaling_switch
+  KEY_TRANSLATIONS[:allowWildScalingSwitch] = :allow_wild_scaling_switch
   KEY_TRANSLATIONS[:maximumLevelsToScaleVariable] = :maximum_levels_to_scale_variable
   KEY_TRANSLATIONS[:manualTargetLevelVariable] = :manual_target_level_variable
   KEY_TRANSLATIONS[:difficultySettings] = :difficulty_settings
@@ -31,6 +32,10 @@ module Configs
       # Allow allies scaling switch ID
       # @return [Integer]
       attr_accessor :allow_allies_scaling_switch
+
+      # Allow wild scaling switch ID
+      # @return [Integer]
+      attr_accessor :allow_wild_scaling_switch
 
       # Maximum levels to scale variable ID
       # @return [Integer]

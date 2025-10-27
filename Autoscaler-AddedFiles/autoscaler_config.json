@@ -4,6 +4,7 @@
   "allowEvolutionScalingSwitch": 202,
   "allowMovesetScalingSwitch": 203,
   "allowAlliesScalingSwitch": 204,
+  "allowWildScalingSwitch": 205,
   "maximumLevelsToScaleVariable": 200,
   "manualTargetLevelVariable": 201,
   "difficultySettings": [
