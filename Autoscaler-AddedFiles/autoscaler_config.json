@@ -1,0 +1,10 @@
+{
+  "levelScalingSwitch": 200,
+  "scaleDownSwitch": 201,
+  "EvolutionScalingSwitch": 202,
+  "MovesetScalingSwitch": 203,
+  "maximumLevelsToScaleVariable": 200,
+  "manualTargetLevelVariable": 201,
+  "scalingReference": "highest",
+  "scalingMode": "up"
+}
