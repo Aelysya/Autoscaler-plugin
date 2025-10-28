@@ -1,12 +1,13 @@
 {
-  "globalActivationSwitch": 200,
-  "allowScaleDownSwitch": 201,
-  "allowEvolutionScalingSwitch": 202,
-  "allowMovesetScalingSwitch": 203,
-  "allowAlliesScalingSwitch": 204,
-  "allowWildScalingSwitch": 205,
-  "maximumLevelsToScaleVariable": 200,
-  "manualTargetLevelVariable": 201,
+  "globalActivationSwitch": 201,
+  "allowScaleDownSwitch": 202,
+  "allowEvolutionScalingSwitch": 203,
+  "allowMovesetScalingSwitch": 204,
+  "allowAlliesScalingSwitch": 205,
+  "allowWildScalingSwitch": 206,
+  "currentDifficultySettingVariable": 201,
+  "maximumLevelsToScaleVariable": 202,
+  "manualTargetLevelVariable": 203,
   "difficultySettings": [
     {
       "label": "Easy",
@@ -19,6 +20,10 @@
     {
       "name": "Hard",
       "scalingReference": "highest"
+    },
+    {
+      "name": "Fixed",
+      "scalingReference": "fixed_bonus"
     }
   ]
 }
