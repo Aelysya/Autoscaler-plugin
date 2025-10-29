@@ -5,6 +5,7 @@ module Configs
   KEY_TRANSLATIONS[:allowMovesetScalingSwitch] = :allow_moveset_scaling_switch
   KEY_TRANSLATIONS[:allowAlliesScalingSwitch] = :allow_allies_scaling_switch
   KEY_TRANSLATIONS[:allowWildScalingSwitch] = :allow_wild_scaling_switch
+  KEY_TRANSLATIONS[:allowQuestsRewardScalingSwitch] = :allow_quests_reward_scaling_switch
   KEY_TRANSLATIONS[:currentDifficultySettingVariable] = :current_difficulty_setting_variable
   KEY_TRANSLATIONS[:maximumLevelsToScaleVariable] = :maximum_levels_to_scale_variable
   KEY_TRANSLATIONS[:manualTargetLevelVariable] = :manual_target_level_variable
@@ -37,6 +38,10 @@ module Configs
       # Allow wild scaling switch ID
       # @return [Integer]
       attr_accessor :allow_wild_scaling_switch
+
+      # Allow quests reward scaling switch ID
+      # @return [Integer]
+      attr_accessor :allow_quests_reward_scaling_switch
 
       # Current difficulty setting variable ID
       # @return [Integer]

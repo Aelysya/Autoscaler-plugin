@@ -5,6 +5,7 @@
   "allowMovesetScalingSwitch": 204,
   "allowAlliesScalingSwitch": 205,
   "allowWildScalingSwitch": 206,
+  "allowQuestsRewardScalingSwitch": 207,
   "currentDifficultySettingVariable": 201,
   "maximumLevelsToScaleVariable": 202,
   "manualTargetLevelVariable": 203,
