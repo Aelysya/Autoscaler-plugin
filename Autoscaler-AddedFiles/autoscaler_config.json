@@ -9,6 +9,22 @@
   "currentDifficultySettingVariable": 201,
   "maximumLevelsToScaleVariable": 202,
   "manualTargetLevelVariable": 203,
+  "loyaltyEvolutionsLevels": [
+    20,
+    30
+  ],
+  "stoneEvolutionsLevels": [
+    30,
+    40
+  ],
+  "tradeEvolutionsLevels": [
+    20,
+    40
+  ],
+  "heldItemEvolutionsLevels": [
+    10,
+    30
+  ],
   "difficultySettings": [
     {
       "label": "Easy",
@@ -21,10 +37,6 @@
     {
       "name": "Hard",
       "scalingReference": "highest"
-    },
-    {
-      "name": "Fixed",
-      "scalingReference": "fixed_bonus"
     }
   ]
 }

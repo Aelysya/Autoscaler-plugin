@@ -24,14 +24,13 @@ module Studio
         # @return [PFM::Pokemon]
         def autoscale(base_level)
           reference_level = calc_reference_level
-
           return if reference_level == -1
 
           level = autoscale_level(base_level, reference_level)
+          symbol = autoscale_evolution(level) if $game_switches[Configs.autoscaler.allow_evolution_scaling_switch] && level != base_level
+          extra[:moves] = autoscale_moveset(level, symbol) if $game_switches[Configs.autoscaler.allow_moveset_scaling_switch] && level != base_level
 
-          specie = autoscale_evolution
-
-          return PFM::Pokemon.new(specie, level, shiny_setup.shiny, shiny_setup.not_shiny, generic_form_generation, extra)
+          return PFM::Pokemon.new(symbol, level, shiny_setup.shiny, shiny_setup.not_shiny, generic_form_generation, extra)
         end
 
         # Calculate the reference level based on the current configuration
@@ -68,17 +67,43 @@ module Studio
           return level.clamp(1, Configs.settings.max_level)
         end
 
-        def autoscale_evolution
-          return specie unless $game_switches[Configs.autoscaler.allow_evolution_scaling_switch]
+        # Change the Pokémon species for one of it's evolutions if its level is high enough
+        # @param level [Integer] level of the encounter
+        # @return [Symbol] species db_symbol
+        def autoscale_evolution(level)
+          data = data_creature_form(specie, form)
+          evolutions = data.evolutions.select { |evo| evo.condition_data(:gemme).nil? }
+          return specie if evolutions.empty?
 
-          data = data_creature(specie)
-          evolutions = data.forms[form].evolutions
+          index_in_evo_line = specie == data.baby_db_symbol ? 0 : 1
+
+          evolutions.reject! do |evo|
+            (!evo.condition_data(:minLevel).nil? && evo.condition_data(:minLevel) > level) ||
+              (!evo.condition_data(:gender).nil? && evo.condition_data(:gender) != extra[:gender]) ||
+              (!evo.condition_data(:stone).nil? && Configs.autoscaler.stone_evolution_levels[index_in_evo_line] > level) ||
+              (!evo.condition_data(:trade).nil? && Configs.autoscaler.trade_evolution_levels[index_in_evo_line] > level) ||
+              (!evo.condition_data(:minLoyalty).nil? && Configs.autoscaler.loyalty_evolution_levels[index_in_evo_line] > level) ||
+              (!evo.condition_data(:itemHold).nil? && Configs.autoscaler.item_held_evolution_levels[index_in_evo_line] > level)
+          end
           return specie if evolutions.empty?
 
           return evolutions.first.db_symbol
         end
-      end
 
+        # Adjust the moveset according to the level
+        # @param level [Integer] level of the encounter
+        # @param symbol [Symbol] db_symbol of the species
+        # @return [Array<Symbol>] adjusted moveset
+        def autoscale_moveset(level, symbol)
+          data = data_creature_form(symbol, form)
+          learnset = data.move_set.select { |move| move.level_learnable? && move.level <= level }.last(4)
+          return extra[:moves] if learnset.empty?
+
+          moveset = (extra[:moves] + learnset).uniq
+          moveset.reject! { |move| extra[:moves].include?(move) && moveset.size > 4 }
+          return moveset.last(4)
+        end
+      end
       prepend AutoscalerPlugin
     end
   end

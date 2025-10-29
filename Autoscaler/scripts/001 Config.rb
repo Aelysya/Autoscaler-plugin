@@ -9,6 +9,10 @@ module Configs
   KEY_TRANSLATIONS[:currentDifficultySettingVariable] = :current_difficulty_setting_variable
   KEY_TRANSLATIONS[:maximumLevelsToScaleVariable] = :maximum_levels_to_scale_variable
   KEY_TRANSLATIONS[:manualTargetLevelVariable] = :manual_target_level_variable
+  KEY_TRANSLATIONS[:loyaltyEvolutionsLevels] = :loyalty_evolution_levels
+  KEY_TRANSLATIONS[:stoneEvolutionsLevels] = :stone_evolution_levels
+  KEY_TRANSLATIONS[:tradeEvolutionsLevels] = :trade_evolution_levels
+  KEY_TRANSLATIONS[:heldItemEvolutionsLevels] = :held_item_evolution_levels
   KEY_TRANSLATIONS[:difficultySettings] = :difficulty_settings
   KEY_TRANSLATIONS[:label] = :label
   KEY_TRANSLATIONS[:scalingReference] = :scaling_reference
@@ -54,6 +58,22 @@ module Configs
       # Manual target level variable ID
       # @return [Integer]
       attr_accessor :manual_target_level_variable
+
+      # Loyalty evolutions levels
+      # @return [Array<Integer>]
+      attr_accessor :loyalty_evolution_levels
+
+      # Stone evolutions levels
+      # @return [Array<Integer>]
+      attr_accessor :stone_evolution_levels
+
+      # Trade evolutions levels
+      # @return [Array<Integer>]
+      attr_accessor :trade_evolution_levels
+
+      # Held item evolutions levels
+      # @return [Array<Integer>]
+      attr_accessor :held_item_evolution_levels
 
       # Difficulty settings
       # @return [Array<Hash>]
