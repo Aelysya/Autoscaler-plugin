@@ -3,6 +3,9 @@ module Configs
   KEY_TRANSLATIONS[:allowScaleDownSwitch] = :allow_scale_down_switch
   KEY_TRANSLATIONS[:allowEvolutionScalingSwitch] = :allow_evolution_scaling_switch
   KEY_TRANSLATIONS[:allowMovesetScalingSwitch] = :allow_moveset_scaling_switch
+  KEY_TRANSLATIONS[:allowNonLevelUpMovesReplacingSwitch] = :allow_non_level_up_moves_replacing_switch
+  KEY_TRANSLATIONS[:allowDifferentTypeMovesReplacingSwitch] = :allow_different_type_moves_replacing_switch
+  KEY_TRANSLATIONS[:allowStatusMovesReplacingSwitch] = :allow_status_moves_replacing_switch
   KEY_TRANSLATIONS[:allowAlliesScalingSwitch] = :allow_allies_scaling_switch
   KEY_TRANSLATIONS[:allowWildScalingSwitch] = :allow_wild_scaling_switch
   KEY_TRANSLATIONS[:allowQuestsRewardScalingSwitch] = :allow_quests_reward_scaling_switch
@@ -34,6 +37,18 @@ module Configs
       # Allow moveset scaling switch ID
       # @return [Integer]
       attr_accessor :allow_moveset_scaling_switch
+
+      # Allow non-level-up moves replacing switch ID
+      # @return [Integer]
+      attr_accessor :allow_non_level_up_moves_replacing_switch
+
+      # Allow different type moves replacing switch ID
+      # @return [Integer]
+      attr_accessor :allow_different_type_moves_replacing_switch
+
+      # Allow status moves replacing switch ID
+      # @return [Integer]
+      attr_accessor :allow_status_moves_replacing_switch
 
       # Allow allies scaling switch ID
       # @return [Integer]

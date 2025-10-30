@@ -3,6 +3,9 @@
   "allowScaleDownSwitch": 202,
   "allowEvolutionScalingSwitch": 203,
   "allowMovesetScalingSwitch": 204,
+  "allowNonLevelUpMovesReplacingSwitch": 208,
+  "allowDifferentTypeMovesReplacingSwitch": 209,
+  "allowStatusMovesReplacingSwitch": 210,
   "allowAlliesScalingSwitch": 205,
   "allowWildScalingSwitch": 206,
   "allowQuestsRewardScalingSwitch": 207,
@@ -36,7 +39,11 @@
     },
     {
       "name": "Hard",
-      "scalingReference": "highest"
+      "scalingReference": "partyHighest"
+    },
+    {
+      "name": "Custom",
+      "scalingReference": "overallHighest"
     }
   ]
 }
