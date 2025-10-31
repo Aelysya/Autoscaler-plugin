@@ -2,6 +2,7 @@
   "globalActivationSwitch": 201,
   "allowScaleDownSwitch": 202,
   "allowEvolutionScalingSwitch": 203,
+  "allowEvolutionScalingDownSwitch": 211,
   "allowMovesetScalingSwitch": 204,
   "allowNonLevelUpMovesReplacingSwitch": 208,
   "allowDifferentTypeMovesReplacingSwitch": 209,
@@ -9,9 +10,10 @@
   "allowAlliesScalingSwitch": 205,
   "allowWildScalingSwitch": 206,
   "allowQuestsRewardScalingSwitch": 207,
-  "currentDifficultySettingVariable": 201,
+  "scalingModeVariable": 201,
   "maximumLevelsToScaleVariable": 202,
   "manualTargetLevelVariable": 203,
+  "flatLevelModifierVariable": 204,
   "loyaltyEvolutionsLevels": [
     20,
     30
@@ -27,23 +29,5 @@
   "heldItemEvolutionsLevels": [
     10,
     30
-  ],
-  "difficultySettings": [
-    {
-      "label": "Easy",
-      "scalingReference": "average"
-    },
-    {
-      "name": "Normal",
-      "scalingReference": "manual"
-    },
-    {
-      "name": "Hard",
-      "scalingReference": "partyHighest"
-    },
-    {
-      "name": "Custom",
-      "scalingReference": "overallHighest"
-    }
   ]
 }
