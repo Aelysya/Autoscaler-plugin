@@ -1,33 +1,75 @@
 {
   "globalActivationSwitch": 201,
-  "allowScaleDownSwitch": 202,
+  "allowLevelScalingDownSwitch": 202,
   "allowEvolutionScalingSwitch": 203,
-  "allowEvolutionScalingDownSwitch": 211,
-  "allowMovesetScalingSwitch": 204,
-  "allowNonLevelUpMovesReplacingSwitch": 208,
-  "allowDifferentTypeMovesReplacingSwitch": 209,
-  "allowStatusMovesReplacingSwitch": 210,
-  "allowAlliesScalingSwitch": 205,
-  "allowWildScalingSwitch": 206,
-  "allowQuestsRewardScalingSwitch": 207,
+  "allowEvolutionScalingDownSwitch": 204,
+  "allowMovesetScalingSwitch": 205,
+  "allowMovesetScalingDownSwitch": 206,
+  "allowAllyTrainersScalingSwitch": 207,
+  "allowWildBattlesScalingSwitch": 208,
+  "allowQuestRewardsScalingSwitch": 209,
+  "allowNonLevelUpMovesReplacingSwitch": 210,
+  "allowDifferentTypeMovesReplacingSwitch": 211,
+  "allowStatusMovesReplacingSwitch": 212,
   "scalingModeVariable": 201,
   "maximumLevelsToScaleVariable": 202,
   "manualTargetLevelVariable": 203,
   "flatLevelModifierVariable": 204,
-  "loyaltyEvolutionsLevels": [
-    20,
-    30
-  ],
-  "stoneEvolutionsLevels": [
-    30,
-    40
-  ],
-  "tradeEvolutionsLevels": [
-    20,
-    40
-  ],
-  "heldItemEvolutionsLevels": [
-    10,
-    30
+  "multipleEvolutionsChoiceMode": "random",
+  "evolutionLevelsForSpecificMethods": {
+    "loyalty": [
+      20,
+      30
+    ],
+    "skill": [
+      20,
+      30
+    ],
+    "dayNight": [
+      50,
+      60
+    ],
+    "weather": [
+      20,
+      30
+    ],
+    "env": [
+      20,
+      30
+    ],
+    "maps": [
+      20,
+      30
+    ],
+    "func": [
+      20,
+      30
+    ],
+    "nature": [
+      20,
+      30
+    ],
+    "stone": [
+      30,
+      40
+    ],
+    "trade": [
+      20,
+      40
+    ],
+    "itemHold": [
+      10,
+      30
+    ]
+  },
+  "customEvolutionChecks": [
+    [
+      "sneasel",
+      30
+    ],
+    [
+      "gligar",
+      45
+    ]
   ]
 }
