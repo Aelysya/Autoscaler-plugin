@@ -13,6 +13,7 @@ module Studio
           return super if context == :wild && !$game_switches[Configs.autoscaler.allow_wild_battles_scaling_switch]
           return super if context == :quest && !$game_switches[Configs.autoscaler.allow_quest_rewards_scaling_switch]
           return super if context == :ally && !$game_switches[Configs.autoscaler.allow_ally_trainers_scaling_switch]
+          return super if context == :trainer && !$game_switches[Configs.autoscaler.allow_trainers_scaling_switch]
 
           autoscaler = PFM::Autoscaler.new(self, context)
           (level, species, form, moves) = autoscaler.autoscale

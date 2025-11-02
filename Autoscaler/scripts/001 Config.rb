@@ -5,6 +5,7 @@ module Configs
   KEY_TRANSLATIONS[:allowEvolutionScalingDownSwitch] = :allow_evolution_scaling_down_switch
   KEY_TRANSLATIONS[:allowMovesetScalingSwitch] = :allow_moveset_scaling_switch
   KEY_TRANSLATIONS[:allowMovesetScalingDownSwitch] = :allow_moveset_scaling_down_switch
+  KEY_TRANSLATIONS[:allowTrainersScalingSwitch] = :allow_trainers_scaling_switch
   KEY_TRANSLATIONS[:allowAllyTrainersScalingSwitch] = :allow_ally_trainers_scaling_switch
   KEY_TRANSLATIONS[:allowWildBattlesScalingSwitch] = :allow_wild_battles_scaling_switch
   KEY_TRANSLATIONS[:allowQuestRewardsScalingSwitch] = :allow_quest_rewards_scaling_switch
@@ -44,6 +45,10 @@ module Configs
       # Allow moveset scaling down switch ID
       # @return [Integer]
       attr_accessor :allow_moveset_scaling_down_switch
+
+      # Allow trainers scaling switch ID
+      # @return [Integer]
+      attr_accessor :allow_trainers_scaling_switch
 
       # Allow ally trainers scaling switch ID
       # @return [Integer]
