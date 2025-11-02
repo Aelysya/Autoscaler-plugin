@@ -81,7 +81,10 @@ module PFM
     # @param index [Integer] index in the evolution line
     # @return [Boolean] whether the evolution is valid
     def check_evolution_validity(evolution, index)
-      return true if @config.custom_evolution_checks.any? { |check| check[0] == @species.to_s && check[1] <= @level }
+      if @config.custom_evolution_checks.any? { |check| check[0] == @species.to_s }
+        log_debug('Using custom evolution check.')
+        return @config.custom_evolution_checks.any? { |check| check[0] == @species.to_s && check[1] <= @level }
+      end
 
       return false if UNSUPPORTED_EVOLUTION_METHODS.any? { |cond| !evolution.condition_data(cond).nil? }
 
