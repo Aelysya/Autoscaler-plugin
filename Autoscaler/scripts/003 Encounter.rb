@@ -9,6 +9,7 @@ module Studio
           return super unless $game_switches[Configs.autoscaler.global_activation_switch]
 
           context = $game_temp.autoscaling_context
+          return super if context == :egg # We don't want a lvl 50 Charizard egg as a quest reward do we?
           return super if context == :wild && !$game_switches[Configs.autoscaler.allow_wild_battles_scaling_switch]
           return super if context == :quest && !$game_switches[Configs.autoscaler.allow_quest_rewards_scaling_switch]
           return super if context == :ally && !$game_switches[Configs.autoscaler.allow_ally_trainers_scaling_switch]

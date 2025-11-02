@@ -1,5 +1,5 @@
 class Game_Temp
-  # Current autoscaling context (trainer, ally, wild, quest)
+  # Current autoscaling context (trainer, ally, wild, quest, egg)
   # @return [Symbol]
   attr_accessor :autoscaling_context
 
@@ -21,12 +21,24 @@ module PFM
           # @param data [Integer, Symbol, Hash, Studio::Group::Encounter] data of the Pokémon to give
           # @param level [Integer] The level of the Pokémon (only used if the data is an Integer or a Symbol)
           def pokemon_from_data(data, level)
-            $game_temp.autoscaling_context = :quest
+            $game_temp.autoscaling_context = :quest unless $game_temp.autoscaling_context == :egg
             super
           end
         end
         prepend AutoscalerPlugin
       end
+
+      module AutoscalerPlugin
+        private
+
+        # Earning an egg from a quest
+        # @param data [Integer, Symbol, Hash, Studio::Group::Encounter] data of the egg to give
+        def earning_egg(data)
+          $game_temp.autoscaling_context = :egg
+          super
+        end
+      end
+      prepend AutoscalerPlugin
     end
   end
 

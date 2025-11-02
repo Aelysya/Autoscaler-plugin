@@ -68,7 +68,7 @@ module PFM
           log_encounter_state('Encounter state after evolution autoscaling:')
         end
         if $game_switches[@config.allow_moveset_scaling_switch]
-          autoscale_moveset_up
+          autoscale_moveset
           log_encounter_state('Encounter state after moveset autoscaling:')
         end
       when :down
@@ -76,10 +76,10 @@ module PFM
           autoscale_evolution_down
           log_encounter_state('Encounter state after evolution autoscaling down:')
         end
-        # if $game_switches[@config.allow_moveset_scaling_down_switch]
-        #   autoscale_moveset_down
-        #   log_encounter_state('Encounter state after moveset autoscaling down:')
-        # end
+        if $game_switches[@config.allow_moveset_scaling_down_switch]
+          autoscale_moveset
+          log_encounter_state('Encounter state after moveset autoscaling down:')
+        end
       end
 
       log_encounter_state('Encounter state after full autoscaling:')
