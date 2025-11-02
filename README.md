@@ -4,7 +4,7 @@ This plugin allows you to automatically scale the encounters you set up in your 
 
 ## Useful links
 
-- [Discord server](https://discord.gg/0noB0gBDd91B8pMk)
+- [Pokémon Workshop Discord server](https://discord.gg/0noB0gBDd91B8pMk)
 
 ## How to install
 
@@ -24,20 +24,20 @@ In the event of an update of the plugin, here are the steps to follow if you alr
 - Download the latest release from the repository.
 - Unzip the archive.
 - Replace the `Autoscaler.psdkplug` file located in your `scripts` folder with the one you downloaded.
-- Go back to your project's root folder and run the `cmd.bat` executable, a terminal should open up.
+- Go back to your project's root folder and run the `cmd.bat` executable.
 - Enter the command `psdk --util=plugin load` to update the plugin.
 
 ## Configuration
 
 Now that the plugin is installed, you'll need to configure it, and there's a lot to talk about.
-The configuration file you are looking for is named `autoscaler_config.json` and is located in the `Data/configs` folder of your project.
+The configuration file is named `autoscaler_config.json` and is located in the `Data/configs` folder of your project.
 
 There are 13 switches and 4 variables brought with this plugin, they are mapped to default values when you install the plugin for the first time. Since these numbers may conflict with some of your own, feel free to re-map them all to free spaces. To do that, you just have to change the number associated with them in the configuration file.
 
 ### Global activation
 
 The `globalActivationSwitch` switch is pretty straightforward, activating it makes the plugin able to scale the levels of the encounters. This is the master switch, when it's **OFF**, the plugin is **OFF**.
-The real use of this will most likely be to turn it **OFF** when you want to deactivate everything momentarily for an encounter to not be scaled, that way you don't have to modify anything else.
+The main use of this switch will be to turn it **OFF** when you want to deactivate everything momentarily for an encounter to not be scaled, that way you don't have to modify anything else.
 
 ### Context-dependant activation
 
@@ -46,7 +46,7 @@ You may want to allow the plugin to scale the Wild Pokémon, but not the trainer
 - The `allowTrainersScalingSwitch` switch allows scaling the enemy trainers.
 - The `allowAllyTrainersScalingSwitch` switch allows scaling the ally trainers.
 - The `allowWildBattlesScalingSwitch` switch allows scaling the wild battles.
-- The `allowQuestRewardsScalingSwitch` switch allows scaling the quest rewards (eggs will not be scaled, for obvious reasons).
+- The `allowQuestRewardsScalingSwitch` switch allows scaling the quest rewards (eggs will never be scaled, for obvious reasons).
 
 To activate the autoscaler for any of these contexts, set it's related switch **ON**.
 
@@ -72,7 +72,7 @@ Once the scaling reference is calculated, you can modify it using the `flatLevel
 
 #### Scaling limitation
 
-You can limit how much the level an encounter can change by using the `maximumLevelsToScaleVariable` variable. This will make it so, if the scaling reference is greater than this maximum, the final level of an encounter change the maximum's value rather than all the way to the reference. If you set it to 100 (or the maximum level of your fangame) there will be no limit to the level change of any encounter.
+You can limit how much the level an encounter can change by using the `maximumLevelsToScaleVariable` variable. This will make it so, if the scaling reference is greater than this maximum, the final level of an encounter change the maximum's value rather than all the way to the reference. If you set it to 100 (or the maximum level of your fangame) there will be no limit to the level change of any encounter. **Do not forget to initialize this variable, or the scaling won't work (because it is set to 0 by default)**
 
 #### Practical examples (Level)
 
